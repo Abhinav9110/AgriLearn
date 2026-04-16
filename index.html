@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en" suppressHydrationWarning>
+  <head>
+    <script>
+      (function () {
+        try {
+          var t = localStorage.getItem("agrilearn-theme");
+          var dark =
+            t === "dark" ||
+            ((t === "system" || !t) && window.matchMedia("(prefers-color-scheme: dark)").matches);
+          document.documentElement.classList.toggle("dark", dark);
+        } catch (e) {}
+      })();
+      (function () {
+        try {
+          var l = localStorage.getItem("agrilearn-lang");
+          document.documentElement.lang = l === "hi" ? "hi" : l === "pa" ? "pa" : "en";
+        } catch (e) {}
+      })();
+    </script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AgriLearn - Organic Farming Knowledge Portal</title>
+    <meta name="description" content="A centralized web portal for organic farming knowledge management. Access articles, crop guides, pest control methods, and community forums." />
+    <meta name="author" content="Abhinav Kumar" />
+    <link rel="icon" type="image/svg+xml" href="/AgriLearn/favicon.svg" />
+    <link rel="apple-touch-icon" href="/AgriLearn/favicon.svg" />
+    <meta property="og:title" content="AgriLearn - Organic Farming Knowledge Portal" />
+    <meta property="og:description" content="Empowering farmers with organic farming knowledge for a sustainable future." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="/favicon.svg" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content="/favicon.svg" />
+    <script type="module" crossorigin src="/AgriLearn/assets/index-DIEX7k2T.js"></script>
+    <link rel="stylesheet" crossorigin href="/AgriLearn/assets/index-DCkMjxQH.css">
+  </head>
+
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
