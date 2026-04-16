@@ -1,0 +1,177 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 90 20% 97%;
+    --foreground: 150 30% 10%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 150 30% 10%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 150 30% 10%;
+
+    --primary: 142 52% 36%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 85 30% 90%;
+    --secondary-foreground: 150 30% 15%;
+
+    --muted: 90 15% 93%;
+    --muted-foreground: 150 10% 45%;
+
+    --accent: 38 80% 55%;
+    --accent-foreground: 38 90% 15%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 90 15% 88%;
+    --input: 90 15% 88%;
+    --ring: 142 52% 36%;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+
+    /* Custom tokens */
+    --earth: 30 40% 30%;
+    --earth-foreground: 30 20% 95%;
+    --leaf: 100 45% 45%;
+    --leaf-foreground: 0 0% 100%;
+    --hero-overlay: 150 40% 15%;
+    --gradient-primary: linear-gradient(135deg, hsl(142 52% 36%), hsl(100 45% 45%));
+    --gradient-warm: linear-gradient(135deg, hsl(38 80% 55%), hsl(30 70% 45%));
+    --shadow-card: 0 4px 20px -4px hsl(150 30% 10% / 0.08);
+    --shadow-card-hover: 0 8px 30px -4px hsl(150 30% 10% / 0.15);
+
+    --font-heading: 'Playfair Display', serif;
+    --font-body: 'Inter', sans-serif;
+  }
+
+  .dark {
+    --background: 150 22% 9%;
+    --foreground: 90 15% 96%;
+
+    --card: 150 20% 12%;
+    --card-foreground: 90 15% 96%;
+
+    --popover: 150 20% 11%;
+    --popover-foreground: 90 15% 96%;
+
+    --primary: 142 48% 48%;
+    --primary-foreground: 150 30% 8%;
+
+    --secondary: 150 16% 18%;
+    --secondary-foreground: 90 15% 92%;
+
+    --muted: 150 14% 16%;
+    --muted-foreground: 90 10% 62%;
+
+    --accent: 38 72% 52%;
+    --accent-foreground: 38 90% 12%;
+
+    --destructive: 0 62% 48%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 150 14% 20%;
+    --input: 150 14% 20%;
+    --ring: 142 48% 48%;
+
+    --sidebar-background: 150 22% 10%;
+    --sidebar-foreground: 90 15% 92%;
+    --sidebar-primary: 142 48% 48%;
+    --sidebar-primary-foreground: 150 30% 8%;
+    --sidebar-accent: 150 16% 16%;
+    --sidebar-accent-foreground: 90 15% 92%;
+    --sidebar-border: 150 14% 18%;
+    --sidebar-ring: 142 48% 48%;
+
+    --earth: 30 35% 55%;
+    --earth-foreground: 30 25% 12%;
+    --leaf: 100 42% 48%;
+    --leaf-foreground: 150 30% 8%;
+    --hero-overlay: 150 35% 6%;
+    --gradient-primary: linear-gradient(135deg, hsl(142 48% 42%), hsl(100 40% 42%));
+    --gradient-warm: linear-gradient(135deg, hsl(38 72% 48%), hsl(30 60% 42%));
+    --shadow-card: 0 4px 24px -4px hsl(0 0% 0% / 0.35);
+    --shadow-card-hover: 0 10px 36px -4px hsl(0 0% 0% / 0.45);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: var(--font-body);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+  }
+}
+
+@layer utilities {
+  .text-gradient-primary {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .bg-gradient-primary {
+    background: var(--gradient-primary);
+  }
+
+  .bg-gradient-warm {
+    background: var(--gradient-warm);
+  }
+
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+
+  .shadow-card-hover {
+    box-shadow: var(--shadow-card-hover);
+  }
+
+  .animate-fade-up {
+    animation: fadeUp 0.6s ease-out forwards;
+    opacity: 0;
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.5s ease-out forwards;
+    opacity: 0;
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
